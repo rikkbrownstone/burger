@@ -1,0 +1,61 @@
+<!-- Place Container -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">
+        <span class="iggy">
+          
+          <br><p>Riks Burger</p>
+          
+        </span>
+      </h1>
+    </div>
+
+    <div class="col-md-12">
+      <div class="burgerImage">
+        <center>
+          {{!-- <img src="assets/images/burger_img.png" alt="Burger"> --}}
+        </center>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Menu</h2>
+      <ul>
+        {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+      </ul>
+    </div>
+
+
+
+    <div class="col-md-6">
+      <h2>Devoured</h2>
+      <ul>
+        {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-12">
+
+      {{!-- <h2>Make Your Own Burger</h2> --}}
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="br">Burger</label>
+          <input type="text" id="br" name="burger_name">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="center-block btn btn-default"> Add Burger<input type="radio" name="devoured" value="0" checked>
+
+          </button>
+
+          
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
